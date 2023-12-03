@@ -1,0 +1,229 @@
+// Import des parts
+@import '_variables';
+
+/*** GÉNÉRAL ***/
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-size: $font-size-default;
+    font-family: $font-family-primary;
+    min-height: 100vh;
+}
+
+.center{
+    text-align: center;
+}
+
+#main-section {
+    min-height: calc( 100vh - 94px );
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+    padding: 30px 0;
+
+    hr {
+        margin-bottom: 30px;
+    }
+}
+
+/*** HEADER ***/
+.nav-menu {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: $secondary;
+    justify-content: space-evenly;
+
+    li {
+        flex: 1;
+        min-width: 170px;
+        border-right: 1px solid $secondary-hover;
+
+        @media only screen and (max-width: 768px) {
+            min-width: 100%;
+            border-right: none;
+            border-bottom: 1px solid $secondary-hover;
+        }
+
+        &:last-child {
+            border: none;
+        }
+
+        i {
+            margin-right: 5px;
+        }
+    
+        a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 16px 16px;
+            text-decoration: none;
+            transition: all .3s;
+    
+            &:hover {
+                background-color: $secondary-hover;
+            }
+        }
+    }
+}
+
+/*** FORMULAIRES ***/
+form {
+    &.login-form, &.register-form {
+        display: flex;
+        flex-direction: column;
+        width: fit-content;
+        margin: 30px auto 0 auto;
+        padding: 20px 35px;
+        border-radius: 10px;
+        background-color: #fbfbfb;
+        box-shadow: 0px 3px 13px 2px rgba(0,0,0,0.3);
+
+        a {
+            color: $secondary;
+            text-align: center;
+        }
+    }
+    label {
+        margin-bottom: 5px;
+        margin-top: 15px;
+
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+    input[type=text],input[type=email], input[type=password], input[type=tel], input[type=number] {
+        border: 1px solid $gray;
+        border-radius: 5px;
+        padding: 8px 12px;
+        min-width: 200px;
+    }
+    .submit-btn {
+        background-color: $secondary;
+        border: 2px solid $secondary;
+        border-radius: 5px;
+        padding: 8px 15px;
+        color: #fff;
+        cursor: pointer;
+        transition: all .3s;
+        margin: 25px 0;
+
+        &:hover {
+            background-color: #fff;
+            color: $secondary;
+        }
+    }
+}
+
+/*** USERS LISTE ***/
+#user-liste {
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        border: 1px solid $gray;
+    }
+
+    thead {
+        th {
+            padding: 10px 5px;
+            background-color: #ededed;
+            border-right: 1px solid $gray;
+        }
+    }
+
+    .user-item {
+        border-bottom: 1px solid $gray;
+
+        &:first-child {
+            border-top: 1px solid $gray;
+        }
+        &:last-child {
+            border-bottom: none;
+        }
+
+        td {
+            padding: 10px 0;
+            text-align: center;
+            border-right: 1px solid $gray;
+
+            &:last-child {
+                border: none;
+            }
+        }
+
+        .actions {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+
+            a {
+                color: #fff;
+                border-radius: 5px;
+                padding: 8px 12px;
+                text-decoration: none;
+                transition: all .3s;
+                margin: 5px;
+
+                &.btn-delete {
+                    background-color: #a60a0a;
+                    border: 2px solid #a60a0a;
+                    
+                    &:hover {
+                        color: #a60a0a;
+                    }
+                }
+
+                &.btn-update {
+                    background-color: #d66c09;
+                    border: 2px solid #d66c09;
+        
+                    &:hover {
+                        color: #d66c09;
+                    }
+                }
+
+                &:hover {
+                    background-color: #fff;
+                }
+            }
+        }
+    }
+}
+
+/*** INFOS ***/
+#info-session {
+    display: block;
+    padding: 15px 20px;
+    background-color: $secondary;
+    color: #fff;
+    border-radius: 5px;
+    text-align: center;
+    width: fit-content;
+    margin: 15px auto;
+
+    &.error {
+        background-color: rgb(181, 28, 28);
+    }
+}
+
+/*** FOOTER ***/
+.footer {
+    width: 100%;
+    background-color: $secondary;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+
+    p {
+        margin: 5px 0;
+    }
+}
